@@ -1,8 +1,12 @@
 <template>
   <div id="app">
-    <HeaderComponent v-if="$route.name !== 'login'"  />
-    <router-view v-if="$route.name !== 'login'" />
-    <router-view v-else />
+    <HeaderComponent v-if="$route.name !== 'login'" />
+    <template v-if="$route.name !== 'login'">
+      <router-view />
+    </template>
+    <template v-else>
+      <router-view />
+    </template>
     <FooterLayout v-if="$route.name !== 'login'" />
   </div>
 </template>
@@ -18,8 +22,10 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+@import './assets/styles/custom';
+@import '../node_modules/bootstrap/scss/bootstrap';
 
-<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

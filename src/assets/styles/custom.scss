@@ -1,0 +1,382 @@
+// Define los colores Material Design
+$primary: #4285f4; // Azul primario de Material Design
+$secondary: #aa66cc; // Naranja secundario de Material Design
+$success: #00c851; // Color verde para indicar éxito
+$info: #33b5e5; // Color azul para información adicional
+$warning: #ffbb33; // Color amarillo para advertencias
+$danger: #ff4444; // Color rojo para indicar peligro
+$light: #f8f9fa; // Color para fondos claros
+$dark: #212121; // Color para fondos oscuros
+
+$body-font-family: Arial, sans-serif; // Fuente para el cuerpo del texto
+$heading-font-family: "Roboto", sans-serif;
+
+// Reasigna los colores de Bootstrap
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark // Puedes agregar más colores aquí según sea necesario,
+);
+@import "bootstrap";
+// Estilos para inputs estilo Material Design
+// Para obtener el efecto de floating label, agrega la clase 'form-floating' al formulario
+.form-floating {
+  position: relative;
+}
+
+// Para el input en sí
+.form-control.material {
+  border: none;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+  transition: box-shadow 0.3s ease;
+  border-bottom: 1px solid #ced4da; // Línea debajo del input
+}
+
+// Estilo para select
+.select.material {
+  appearance: none; // Elimina el estilo nativo del sistema
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="black" d="M8 10.586l4.293-4.293a1 1 0 0 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5-5a1 1 0 1 1 1.414-1.414L8 10.586z"/></svg>'); // Agrega un ícono de flecha
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 1rem); // Posición del ícono
+  background-position-y: 50%;
+  padding-right: 2.5rem; // Ajusta el espacio para el ícono
+  outline: none; // Quita el borde azul al seleccionar
+  box-shadow: none; // Quita el shadow azul de enfoque
+}
+
+// Para el efecto de focus
+.select.material:focus {
+  box-shadow: none;
+  outline: none; // Quita el borde azul al seleccionar
+}
+
+// Para el efecto de floating label
+.select.material:focus ~ label,
+.select.material:not(:placeholder-shown) ~ label {
+  top: 0.25rem;
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+
+// Estilo para textarea
+textarea.material {
+  border: none;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+  transition: box-shadow 0.3s ease;
+  border-bottom: 1px solid #ced4da; // Línea debajo del textarea
+  resize: none; // Evita que el textarea sea redimensionable
+}
+
+// Efecto de focus
+textarea.material:focus {
+  box-shadow: none;
+}
+
+// Para el efecto de floating label en textarea
+textarea.material:focus ~ label,
+textarea.material:not(:placeholder-shown) ~ label {
+  top: 0.25rem;
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+
+.btn-material {
+  border-radius: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+// Estilos para los botones primarios
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+}
+
+// Estilos para los botones secundarios
+.btn-secondary {
+  background-color: $secondary;
+  border-color: $secondary;
+  color: $light; // Color de texto para los botones secundarios
+}
+
+// Estilos para los botones de éxito
+.btn-success {
+  background-color: $success;
+  border-color: $success;
+}
+
+// Estilos para los botones de información adicional
+.btn-info {
+  background-color: $info;
+  border-color: $info;
+}
+
+// Estilos para los botones de advertencia
+.btn-warning {
+  background-color: $warning;
+  border-color: $warning;
+}
+
+// Estilos para los botones de peligro
+.btn-danger {
+  background-color: $danger;
+  border-color: $danger;
+}
+
+// Estilos para los botones de fondos claros
+.btn-light {
+  background-color: $light;
+  border-color: $light;
+  color: #212529; // Color de texto para los botones de fondos claros
+}
+
+// Estilos para los botones de fondos oscuros
+.btn-dark {
+  background-color: $dark;
+  border-color: $dark;
+  color: #f8f9fa; // Color de texto para los botones de fondos oscuros
+}
+
+// Efecto de hover
+.btn-material:hover {
+  opacity: 0.8;
+}
+
+// Efecto de focus
+.btn-material:focus {
+  box-shadow: none;
+}
+
+// Efecto de active
+.btn-material:active {
+  opacity: 0.6;
+}
+
+.card {
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: $body-font-family;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font-family;
+}
+
+// Estilo para checkboxes y radio buttons
+.custom-checkbox .custom-control-input,
+.custom-radio .custom-control-input {
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid #ced4da;
+  border-radius: 50%; // Para radio buttons, cambiar a 100%
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem; // Espacio entre el checkbox/radio button y el texto
+  position: relative;
+}
+
+.custom-checkbox .custom-control-input::before,
+.custom-radio .custom-control-input::before {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: #fff; // Color de fondo cuando no está marcado
+  border: 1px solid #adb5bd; // Borde del checkbox/radio button
+  border-radius: 50%; // Para radio buttons, cambiar a 100%
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.custom-checkbox .custom-control-input:checked::before,
+.custom-radio .custom-control-input:checked::before {
+  background-color: #4285f4; // Color de fondo cuando está marcado
+}
+
+// Estilo para el texto junto a los checkboxes y radio buttons
+.custom-control-label {
+  margin-left: 1.5rem; // Espacio entre el texto y el checkbox/radio button
+}
+
+// Estilo para el formulario básico
+.form-control {
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #4285f4; // Color de borde al enfocar
+  box-shadow: 0 0 0 0.25rem rgba(66, 133, 244, 0.25); // Sombra al enfocar
+}
+// Estilo para el formulario básico
+.form-control {
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+// Estilo para el formulario básico en estado de enfoque
+.form-control:focus {
+  border-color: #ced4da; // Restaura el color de borde original
+  box-shadow: none; // Elimina cualquier sombra al enfocar
+}
+input:focus,
+select:focus,
+select,
+input.form-control:focus {
+  outline: none !important;
+
+  outline-width: 0 !important;
+
+  box-shadow: none;
+
+  -moz-box-shadow: none;
+
+  -webkit-box-shadow: none;
+}
+.body {
+  position: relative;
+  font-family:
+    'Roboto','Helvetica','Arial',sans-serif;
+}
+
+.wrap {
+  position: absolute;
+  right: 0;
+  top: 40%;
+  width: 350px;
+  left: 0;
+  margin: 0 auto;
+}
+
+/* select starting stylings ------------------------------*/
+.select {
+  font-family:
+    'Roboto','Helvetica','Arial',sans-serif;
+	position: relative;
+	width: 350px;
+}
+
+.select-text {
+	position: relative;
+	font-family: inherit;
+	background-color: transparent;
+	width: 350px;
+	padding: 10px 10px 10px 0;
+	font-size: 18px;
+	border-radius: 0;
+	border: none;
+	border-bottom: 1px solid rgba(0,0,0, 0.12);
+}
+
+/* Remove focus */
+.select-text:focus {
+	outline: none;
+	border-bottom: 1px solid rgba(0,0,0, 0);
+}
+
+	/* Use custom arrow */
+.select .select-text {
+	appearance: none;
+	-webkit-appearance:none
+}
+
+.select:after {
+	position: absolute;
+	top: 18px;
+	right: 10px;
+	/* Styling the down arrow */
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid rgba(0, 0, 0, 0.12);
+	pointer-events: none;
+}
+
+
+/* LABEL ======================================= */
+.select-label {
+	color: rgba(0,0,0, 0.26);
+	font-size: 18px;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	left: 0;
+	top: 10px;
+	transition: 0.2s ease all;
+}
+
+/* active state */
+.select-text:focus ~ .select-label, .select-text:valid ~ .select-label {
+	color: #2F80ED;
+	top: -20px;
+	transition: 0.2s ease all;
+	font-size: 14px;
+}
+
+/* BOTTOM BARS ================================= */
+.select-bar {
+	position: relative;
+	display: block;
+	width: 350px;
+}
+
+.select-bar:before, .select-bar:after {
+	content: '';
+	height: 2px;
+	width: 0;
+	bottom: 1px;
+	position: absolute;
+	background: #2F80ED;
+	transition: 0.2s ease all;
+}
+
+.select-bar:before {
+	left: 50%;
+}
+
+.select-bar:after {
+	right: 50%;
+}
+
+/* active state */
+.select-text:focus ~ .select-bar:before, .select-text:focus ~ .select-bar:after {
+	width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.select-highlight {
+	position: absolute;
+	height: 60%;
+	width: 100px;
+	top: 25%;
+	left: 0;
+	pointer-events: none;
+	opacity: 0.5;
+}
